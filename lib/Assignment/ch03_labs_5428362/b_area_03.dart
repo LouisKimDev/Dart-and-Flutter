@@ -29,49 +29,63 @@ void main() {
   print("Choose a valid menu: ");
   temp1 = int.parse(stdin.readLineSync()!);
 
-  // Iterate until input right variable
-  while (temp1 < 1 && temp1 > 5) {
-    print("Choose a valid menu: ");
-    temp1 = int.parse(stdin.readLineSync()!);
+  // IF AN INVALID MENU CHOICE WAS ENTERED, AN ERROR MESSAGE SHOULD
+  // BE DISPLAYED BY DEFAULT
+  if (temp1 < 1 || temp1 > 5) {
+    print("ERROR: Choose a valid menu");
   }
 
   // USE A SWITCH IF STATEMENT TO OBTAIN ANY NEEDED INPUT INFORMATION
+  // AND COMPUTE AND DISPLAY THE AREA FOR EACH VALID MENU CHOICE.
   switch (temp1) {
     case 1:
-      {}
+      {
+        //OBTAIN INPUT INFORMATION TO COMPUTE AREA OF A SQUARE
+        print("Enter width: ");
+        temp1 = int.parse(stdin.readLineSync()!);
+
+        //DISPLAY AREA OF A SQUARE
+        print("Area of a square: ${temp1 * temp1}");
+        break;
+      }
+    case 2:
+      {
+        //OBTAIN INPUT INFORMATION TO COMPUTE AREA OF A RECTANGLE
+        print("Enter width: ");
+        temp1 = int.parse(stdin.readLineSync()!);
+        print("Enter height: ");
+        temp2 = int.parse(stdin.readLineSync()!);
+        //DISPLAY AREA OF A RECTANGLE
+        print("Area of a rectangle: ${temp1 * temp2}");
+        break;
+      }
+    case 3:
+      {
+        //OBTAIN INPUT INFORMATION TO COMPUTE AREA OF A CIRCLE
+        print("Enter radius: ");
+        temp1 = int.parse(stdin.readLineSync()!);
+
+        //DISPLAY AREA OF A CIRCLE
+        print("Area of a circle: ${pi * temp1 * temp1}");
+
+        break;
+      }
+    case 4:
+      {
+        //OBTAIN INPUT INFORMATION TO COMPUTE AREA OF A RIGHT TRIANGLE
+        print("Enter width: ");
+        temp1 = int.parse(stdin.readLineSync()!);
+        print("Enter height: ");
+        temp2 = int.parse(stdin.readLineSync()!);
+
+        //DISPLAY AREA OF A RIGHT TRIANGLE
+        print("Area of a right triangle: ${(temp1 * temp2) / 2}");
+        break;
+      }
+    case 5:
+      {
+        print("quit");
+        break;
+      }
   }
-  // AND COMPUTE AND DISPLAY THE AREA FOR EACH VALID MENU CHOICE.
-
-  // IF AN INVALID MENU CHOICE WAS ENTERED, AN ERROR MESSAGE SHOULD
-  // BE DISPLAYED BY DEFAULT
-
-//OBTAIN INPUT INFORMATION TO COMPUTE AREA OF A SQUARE
-
-//DISPLAY AREA OF A SQUARE
-  print("Area of a square: ${temp1 * temp1}");
-
-//OBTAIN INPUT INFORMATION TO COMPUTE AREA OF A RECTANGLE
-  print("Enter width: ");
-  temp1 = int.parse(stdin.readLineSync()!);
-  print("Enter height: ");
-  temp2 = int.parse(stdin.readLineSync()!);
-
-//DISPLAY AREA OF A RECTANGLE
-  print("Area of a rectangle: ${temp1 * temp2}");
-
-//OBTAIN INPUT INFORMATION TO COMPUTE AREA OF A RIGHT TRIANGLE
-  print("Enter width: ");
-  temp1 = int.parse(stdin.readLineSync()!);
-  print("Enter height: ");
-  temp2 = int.parse(stdin.readLineSync()!);
-
-//DISPLAY AREA OF A RIGHT TRIANGLE
-  print("Area of a right triangle: ${(temp1 * temp2) / 2}");
-
-//OBTAIN INPUT INFORMATION TO COMPUTE AREA OF A CIRCLE
-  print("Enter radius: ");
-  temp1 = int.parse(stdin.readLineSync()!);
-
-//DISPLAY AREA OF A CIRCLE
-  print("Area of a circle: ${pi * temp1 * temp1}");
 }
