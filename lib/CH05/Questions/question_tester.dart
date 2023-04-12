@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'questions.dart';
 
-void main() {
+main() {
   Questions q = Questions();
 
   q.setQuestionText("Who is the inventor of Dart?");
@@ -10,5 +10,8 @@ void main() {
   q.display();
   stdout.write("Your answer is: ");
   String response = stdin.readLineSync()!;
-  print(q.checkAnswer(response.toUpperCase()));
+  if (q.checkAnswer(response.toUpperCase()))
+    print("Correct");
+  else
+    print("Incorrect");
 }

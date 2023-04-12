@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'text_button.dart';
 
 void main() {
   MyApp myapp = MyApp();
@@ -12,8 +13,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
+          primarySwatch: Colors.green,
+          canvasColor: Colors.amber,
+          platform: TargetPlatform.linux),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -65,15 +67,13 @@ class _MyHomePageState extends State<MyHomePage> {
         floatingActionButton: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            FloatingActionButton(
-              onPressed: _incrementCounter,
-              tooltip: 'Increment',
-              child: const Icon(Icons.add),
+            TextButtonKMU(
+              onPressed: () => print("im hit!"),
+              buttonText: "Click",
             ),
-            FloatingActionButton(
+            TextButtonKMU(
               onPressed: _decrementCounter,
-              tooltip: 'Decrement',
-              child: const Icon(Icons.remove),
+              buttonText: "Decrease",
             ),
           ],
         ) // This trailing comma makes auto-formatting nicer for build methods.
