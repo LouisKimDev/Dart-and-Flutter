@@ -1,4 +1,4 @@
-import '../questions/questions.dart';
+import '../Questions/questions.dart';
 
 class ChoiceQuestions extends Questions {
   // To store multiple choices for the question
