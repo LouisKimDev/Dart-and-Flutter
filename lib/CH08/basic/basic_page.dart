@@ -221,31 +221,33 @@ class ContainerWithBoxDecorationWidget extends StatelessWidget {
                 Colors.white,
                 Colors.lightGreen.shade500,
               ])),
-      child: RichText(
-          text: TextSpan(
-              text: "Sean World",
-              style: TextStyle(
-                fontSize: 24.0,
-                color: Colors.deepPurple,
-                decoration: TextDecoration.underline,
-                decorationColor: Colors.deepPurpleAccent,
-                decorationStyle: TextDecorationStyle.dotted,
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.normal,
+      child: Center(
+        child: RichText(
+            text: TextSpan(
+                text: "Sean World",
+                style: TextStyle(
+                  fontSize: 24.0,
+                  color: Colors.deepPurple,
+                  decoration: TextDecoration.underline,
+                  decorationColor: Colors.deepPurpleAccent,
+                  decorationStyle: TextDecorationStyle.dotted,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.normal,
+                ),
+                children: <TextSpan>[
+              TextSpan(
+                text: ' for',
               ),
-              children: <TextSpan>[
-            TextSpan(
-              text: ' for',
-            ),
-            TextSpan(
-              text: " Mobile",
-              style: TextStyle(
-                color: Colors.deepOrange,
-                fontStyle: FontStyle.normal,
-                fontWeight: FontWeight.bold,
-              ),
-            )
-          ])),
+              TextSpan(
+                text: " Mobile",
+                style: TextStyle(
+                  color: Colors.deepOrange,
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.bold,
+                ),
+              )
+            ])),
+      ),
     );
   }
 }
