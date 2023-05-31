@@ -27,6 +27,7 @@ class BasicPage extends StatelessWidget {
           color: Colors.white70,
         )),
         bottom: PreferredSize(
+          preferredSize: Size.fromHeight(75.0),
           child: Container(
             color: Colors.lightGreen.shade100,
             height: 75.0,
@@ -35,29 +36,35 @@ class BasicPage extends StatelessWidget {
               child: PopupMenuButtonWidget(),
             ),
           ),
-          preferredSize: Size.fromHeight(75.0),
         ),
       ),
+
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: SafeArea(
-            child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              ContainerWithBoxDecorationWidget(),
-              ColumnWidget(),
-              RowWidget(),
-              ImagesAndIconWidget()
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                ContainerWithBoxDecorationWidget(),
+                ColumnWidget(),
+                RowWidget(),
+                FlatRaisedIconButtonWidgets(),
+                ImagesAndIconWidget(),
+                ButtonBarWidget(),
+              ],
+            ),
           ),
-        )),
+        ),
       ),
+
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(Icons.play_arrow),
         backgroundColor: Colors.lightGreen.shade100,
+        child: Icon(Icons.play_arrow, color: Colors.black,),
       ),
+
       bottomNavigationBar: BottomAppBar(
         color: Colors.lightGreen.shade100,
         child: Row(
@@ -72,6 +79,7 @@ class BasicPage extends StatelessWidget {
           ],
         ),
       ),
+
     );
   }
 }
@@ -209,6 +217,7 @@ class ContainerWithBoxDecorationWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 100.0,
+      width: double.infinity,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(100.0),
@@ -218,7 +227,7 @@ class ContainerWithBoxDecorationWidget extends StatelessWidget {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Colors.white,
+                Colors.lightBlue.shade100,
                 Colors.lightGreen.shade500,
               ])),
       child: Center(
@@ -248,6 +257,113 @@ class ContainerWithBoxDecorationWidget extends StatelessWidget {
                 ),
               ),
             ]),),
+      ),
+    );
+  }
+}
+
+class FlatRaisedIconButtonWidgets extends StatelessWidget {
+  const FlatRaisedIconButtonWidgets({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            TextButton(
+              onPressed: () {},
+              child: Text('Flag',
+              style: TextStyle(
+                color: Colors.black,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.lightGreen
+              ),
+              child: Icon(Icons.flag, 
+              color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+        Padding(padding: EdgeInsets.all(3)),
+        Row(
+          children: [
+            ElevatedButton(
+              onPressed: () {}, 
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color.fromARGB(32, 121, 121, 121)
+              ),
+              child: Text('Save',
+              style: TextStyle(
+                color: Colors.black,
+                ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {}, 
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.lightGreen,
+              ),
+              child: Icon(Icons.save,
+              color: Colors.black,
+              ),
+            )
+          ],
+        ),
+        Padding(padding: EdgeInsets.all(3)),
+        Row(
+          children: [
+            IconButton(onPressed: () {}, 
+            icon: Icon(Icons.flight),
+            ),
+            IconButton(onPressed: () {}, 
+            icon: Icon(Icons.flight),
+            iconSize: 42.0,
+            color: Colors.lightGreen,
+            tooltip: 'flight',
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+class ButtonBarWidget extends StatelessWidget {
+  const ButtonBarWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.green,
+      height: 100,
+      child: 
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          IconButton(
+            onPressed: () {}, 
+            icon: Icon(Icons.map, size: 30,),
+            ),
+
+          Padding(padding: EdgeInsets.all(30)),
+
+          IconButton(
+            onPressed: () {}, 
+            icon: Icon(Icons.key, size: 30),
+            ),
+
+          Padding(padding: EdgeInsets.all(30)),
+
+          IconButton(
+            onPressed: () {}, 
+            icon: Icon(Icons.brush),
+            ),
+        ],
       ),
     );
   }
