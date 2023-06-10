@@ -1,7 +1,17 @@
-class FontInfo {
-  String inputString;
-  String family;
+import 'package:flutter/material.dart';
+
+class FontInfo{
+  String inputString ;
+  Color color;
   double size;
 
-  FontInfo({required this.inputString, this.family = "serif", this.size = 45});
+  bool isUnderlined = false;
+  bool isBold = false;
+  bool isItalic = false;
+
+  FontInfo({
+    required this.inputString,
+    this.color = Colors.black,
+    this.size = 20,
+  });
 }

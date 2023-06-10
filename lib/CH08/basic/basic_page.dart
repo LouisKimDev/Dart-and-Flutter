@@ -38,7 +38,6 @@ class BasicPage extends StatelessWidget {
           ),
         ),
       ),
-
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: SafeArea(
@@ -56,15 +55,15 @@ class BasicPage extends StatelessWidget {
           ),
         ),
       ),
-
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Colors.lightGreen.shade100,
-        child: Icon(Icons.play_arrow, color: Colors.black,),
+        child: Icon(
+          Icons.play_arrow,
+          color: Colors.black,
+        ),
       ),
-
       bottomNavigationBar: BottomAppBar(
         color: Colors.lightGreen.shade100,
         child: Row(
@@ -79,7 +78,6 @@ class BasicPage extends StatelessWidget {
           ],
         ),
       ),
-
     );
   }
 }
@@ -233,30 +231,31 @@ class ContainerWithBoxDecorationWidget extends StatelessWidget {
       child: Center(
         child: RichText(
           textAlign: TextAlign.center,
-            text: TextSpan(
-                text: "Doyun World",
-                style: TextStyle(
-                  fontSize: 24.0,
-                  color: Colors.deepPurple,
-                  decoration: TextDecoration.underline,
-                  decorationColor: Colors.deepPurpleAccent,
-                  decorationStyle: TextDecorationStyle.dotted,
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.normal,
-                ),
-                children: <TextSpan>[
-              TextSpan(
-                text: ' for',
+          text: TextSpan(
+              text: "Doyun World",
+              style: TextStyle(
+                fontSize: 24.0,
+                color: Colors.deepPurple,
+                decoration: TextDecoration.underline,
+                decorationColor: Colors.deepPurpleAccent,
+                decorationStyle: TextDecorationStyle.dotted,
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.normal,
               ),
-              TextSpan(
-                text: " Mobile",
-                style: TextStyle(
-                  color: Colors.deepOrange,
-                  fontStyle: FontStyle.normal,
-                  fontWeight: FontWeight.bold,
+              children: <TextSpan>[
+                TextSpan(
+                  text: ' for',
                 ),
-              ),
-            ]),),
+                TextSpan(
+                  text: " Mobile",
+                  style: TextStyle(
+                    color: Colors.deepOrange,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ]),
+        ),
       ),
     );
   }
@@ -273,19 +272,19 @@ class FlatRaisedIconButtonWidgets extends StatelessWidget {
           children: [
             TextButton(
               onPressed: () {},
-              child: Text('Flag',
-              style: TextStyle(
-                color: Colors.black,
+              child: Text(
+                'Flag',
+                style: TextStyle(
+                  color: Colors.black,
                 ),
               ),
             ),
             TextButton(
               onPressed: () {},
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.lightGreen
-              ),
-              child: Icon(Icons.flag, 
-              color: Colors.white,
+              style: TextButton.styleFrom(backgroundColor: Colors.lightGreen),
+              child: Icon(
+                Icons.flag,
+                color: Colors.white,
               ),
             ),
           ],
@@ -294,23 +293,24 @@ class FlatRaisedIconButtonWidgets extends StatelessWidget {
         Row(
           children: [
             ElevatedButton(
-              onPressed: () {}, 
+              onPressed: () {},
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromARGB(32, 121, 121, 121)
-              ),
-              child: Text('Save',
-              style: TextStyle(
-                color: Colors.black,
+                  backgroundColor: Color.fromARGB(32, 121, 121, 121)),
+              child: Text(
+                'Save',
+                style: TextStyle(
+                  color: Colors.black,
                 ),
               ),
             ),
             ElevatedButton(
-              onPressed: () {}, 
+              onPressed: () {},
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.lightGreen,
               ),
-              child: Icon(Icons.save,
-              color: Colors.black,
+              child: Icon(
+                Icons.save,
+                color: Colors.black,
               ),
             )
           ],
@@ -318,14 +318,16 @@ class FlatRaisedIconButtonWidgets extends StatelessWidget {
         Padding(padding: EdgeInsets.all(3)),
         Row(
           children: [
-            IconButton(onPressed: () {}, 
-            icon: Icon(Icons.flight),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.flight),
             ),
-            IconButton(onPressed: () {}, 
-            icon: Icon(Icons.flight),
-            iconSize: 42.0,
-            color: Colors.lightGreen,
-            tooltip: 'flight',
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.flight),
+              iconSize: 42.0,
+              color: Colors.lightGreen,
+              tooltip: 'flight',
             ),
           ],
         ),
@@ -333,6 +335,7 @@ class FlatRaisedIconButtonWidgets extends StatelessWidget {
     );
   }
 }
+
 class ButtonBarWidget extends StatelessWidget {
   const ButtonBarWidget({super.key});
 
@@ -341,28 +344,26 @@ class ButtonBarWidget extends StatelessWidget {
     return Container(
       color: Colors.green,
       height: 100,
-      child: 
-      Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           IconButton(
-            onPressed: () {}, 
-            icon: Icon(Icons.map, size: 30,),
+            onPressed: () {},
+            icon: Icon(
+              Icons.map,
+              size: 30,
             ),
-
+          ),
           Padding(padding: EdgeInsets.all(30)),
-
           IconButton(
-            onPressed: () {}, 
+            onPressed: () {},
             icon: Icon(Icons.key, size: 30),
-            ),
-
+          ),
           Padding(padding: EdgeInsets.all(30)),
-
           IconButton(
-            onPressed: () {}, 
+            onPressed: () {},
             icon: Icon(Icons.brush),
-            ),
+          ),
         ],
       ),
     );
