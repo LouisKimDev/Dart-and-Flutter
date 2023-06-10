@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
+import 'db_home.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
+import 'dart:io' as IO;
 
-void main() => runApp(StudentRegApp());
+Future main() async {
+  if (IO.Platform.isWindows || IO.Platform.isLinux) {
+    // Initialize FFI
+    sqfliteFfiInit();
 
-class StudentRegApp extends StatelessWidget {
-  const StudentRegApp({super.key});
+    databaseFactory = databaseFactoryFfi;
+  }
+  runApp(MyApp());
+}
 
+class MyApp extends StatelessWidget {
+// This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(theme: ThemeData(primarySwatch: Colors.lightBlue));
+    return MaterialApp(title: 'DB APP', home: StudentPage());
   }
 }
